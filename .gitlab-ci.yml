@@ -1,0 +1,59 @@
+stages:
+  - tests
+
+
+variables:
+  BASE_IMAGE_LINK: "python_basic_image_builder:latest"
+
+  UPGRADE_PIP: "pip install --upgrade pip"
+  INSTALL_REQUIREMENTS: "pip install --no-cache-dir -r requirements.txt"
+
+
+# Проверка кода линтером Flake8
+linter:
+  image: $BASE_IMAGE_LINK
+  stage: tests
+  before_script:
+    - $UPGRADE_PIP
+    - $INSTALL_REQUIREMENTS
+  script:
+    - python -m flake8 . --config=tox.ini
+  tags:
+    - autotest-docker
+
+
+# Проверка статических типов MyPy
+static_type_checker:
+  image: $BASE_IMAGE_LINK
+  stage: tests
+  before_script:
+    - $UPGRADE_PIP
+    - $INSTALL_REQUIREMENTS
+  script:
+    - python -m mypy . --config-file mypy.ini
+  tags:
+    - autotest-docker
+
+
+# Проверка библиотеки через самоустановку
+self_install_test:
+  image: $BASE_IMAGE_LINK
+  stage: tests
+  before_script:
+    - $UPGRADE_PIP
+  script:
+    - pip install --no-cache-dir .
+    - echo "from custom_selenium_qa import * " | python3
+  tags:
+    - autotest-docker
+
+
+# Прогон Unit-тестов
+unit_test:
+  image: $BASE_IMAGE_LINK
+  stage: tests
+  # TODO добавить unit-тесты в проект
+  script:
+    - echo "Need to add unit tests to the project!"
+  tags:
+    - autotest-docker

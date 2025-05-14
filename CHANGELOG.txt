@@ -1,0 +1,50 @@
+## 1.0.7 (2024-10-28)
+
+### Features (1 change)
+
+- Добавление метода click_element_by_action_chance_with_move (для клика через ActionChains с переносом курсора)
+
+## 1.0.6 (2024-09-26)
+
+### Features (1 change)
+
+- Добавление метода scroll_to_element_by_javascript (для прокрутки к элементу через JS)
+
+## 1.0.5 (2024-09-15)
+
+### Chore (1 change)
+
+- Обновление версий для selenium - v4.24.0
+
+## 1.0.4 (2024-09-15)
+
+### Chore (1 change)
+
+- Удаление подзависимостей из requirements.txt (остались только основные зависимости)
+- Обновление версий для flake8, mypy, pytest, pytest-xdist
+
+## 1.0.3 (2024-07-09)
+
+### Fixes (1 change)
+
+- Обновление версии TestIT
+
+## 1.0.2 (2024-02-12)
+
+### Features (1 change)
+
+- Добавление 2-х методов (switch_to_iframe, switch_to_default_page)
+
+## 1.0.1 (2024-02-12)
+
+### Fixes (1 change)
+
+- Добавление CustomWebDriverWait в __init__.py
+
+## 1.0.0 (2024-02-03)
+
+### Features (3 changes)
+
+- Перенесен класс BaseActions из проекта ССП
+- Перенесен класс Locator из проекта ССП
+- Перенесен класс CustomWebDriverWait из проекта ССП
