@@ -14,7 +14,7 @@ IGNORED_EXCEPTIONS = (
 POLL_FREQUENCY = 0.1
 
 # Явное ожидание для отклика элемента
-EXPLICITLY_TIMEOUT = 40.0
+EXPLICITLY_TIMEOUT = 12.0
 
 # Директория для создания скриншотов
 SCREENSHOTS_DIRECTORY = 'screenshots'
